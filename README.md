@@ -1,27 +1,34 @@
 # PsTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.1.
+Este proyecto fue generado con Angular CLI versión 10.2.1.
 
-## Development server
+## Descripción
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Este proyecto es un CRUD sencillo realizado en Angular versión 10 que consume servicios públicos de jsonplaceholder.typicode.com.
 
-## Code scaffolding
+## Instalación
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Clonar el repositorio:   
+   git clone https://github.com/ccgantivad/ps-test.git
+   
+2. Navegar al directorio del proyecto:
+   cd ps-test
+   
+3. Instalar las dependencias:
+   npm install
 
-## Build
+## Ejecución
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+1. Ejecutar la aplicación:
+   ng serve
+   
+2. Abrir el navegador en http://localhost:4200.
 
-## Running unit tests
+## Pruebas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Ejecutar las pruebas unitarias:
+   ng test
 
-## Running end-to-end tests
+## Despliegue
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Este proyecto está desplegado en: https://ccgantivad.github.io/ps-test-release
