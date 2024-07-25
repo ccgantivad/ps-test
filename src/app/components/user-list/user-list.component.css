@@ -8,44 +8,35 @@
   margin-bottom: 20px;
 }
 
+.create-button {
+  position: fixed;
+  bottom: 20px;
+  right: 15%;
+  transform: translateX(50%);
+  z-index: 1000;
+  background-color: primary;
+  color: #eff7f4;
+}
+
 .search-bar {
   width: 100%;
   margin-bottom: 20px;
 }
 
-.create-button {
-  position: fixed;
-  bottom: 20px;
-  right: 30%;
-  transform: translateX(50%);
-  z-index: 1000;
-  background-color: primary;
-  color: #fdf8f8;
-}
-
 .user-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 16px;
+  justify-content: center;
 }
 
 .user-card {
-  width: calc(33% - 20px);
+  width: 100%;
+  max-width: 400px;
   margin-bottom: 20px;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.user-avatar {
-  background-color: #e0e0e0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
 }
 
 mat-card-header {
@@ -63,12 +54,6 @@ mat-card-content {
   padding-top: 0;
 }
 
-
-
-button {
-  margin-top: 10px;
-}
-
 .action-buttons {
   display: flex;
   align-items: center;
@@ -76,4 +61,16 @@ button {
 
 .delete-button {
   margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+  .create-button {
+    right: 10%;
+  }
+}
+
+@media (max-width: 400px) {
+  .create-button {
+    right: 5%;
+  }
 }

@@ -1,31 +1,35 @@
-.container {
-  padding: 20px;
+.full-width {
+  width: 100%;
 }
 
-.actions {
+.mat-dialog-content {
+  padding: 16px 24px;
+}
+
+.mat-dialog-actions {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 20px;
+  padding: 8px 24px;
 }
 
-.create-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
+.mat-form-field {
+  margin-bottom: 16px;
 }
 
-.user-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+.mat-dialog-title {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #3f51b5;
 }
 
-.user-card {
-  width: calc(33% - 20px);
-  margin-bottom: 20px;
-}
+@media (max-width: 600px) {
+  .mat-dialog-actions {
+    flex-direction: column;
+    align-items: center;
+  }
 
-button {
-  margin-top: 10px;
+  .mat-dialog-actions button {
+    width: 100%;
+    margin-top: 8px;
+  }
 }

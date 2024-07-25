@@ -9,8 +9,8 @@
     <mat-label>Buscar usuario</mat-label>
     <input matInput [(ngModel)]="searchTerm" (ngModelChange)="filterUsers()">
   </mat-form-field>
-  <div class="user-list">
-    <mat-card *ngFor="let user of filteredUsers" class="user-card">
+  <div class="user-list" fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="center stretch">
+    <mat-card *ngFor="let user of filteredUsers" class="user-card" fxFlex="100" fxFlex.gt-xs="48" fxFlex.gt-sm="32">
       <mat-card-header>
         <div mat-card-avatar class="user-avatar">
           <mat-icon>person</mat-icon>

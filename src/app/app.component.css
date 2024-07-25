@@ -1,30 +1,21 @@
-.mat-toolbar {
-  font-family: 'Roboto', sans-serif;
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-.mat-toolbar-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.app-container {
+  margin-top: 64px; /* Ajusta esto si tu barra de navegación tiene un tamaño diferente */
+  padding: 20px;
 }
 
 .spacer {
   flex: 1 1 auto;
 }
 
-nav {
-  display: flex;
-  gap: 10px;
-}
-
-.nav-link {
-  font-size: 16px;
+nav a.nav-link {
   color: white;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-.nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+  text-decoration: none;
 }
