@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+/* Asegúrate de que el menú tenga un z-index alto y no se superponga con el contenido */
+.mat-toolbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 100px; /* Ajusta este valor según la altura de tu menú */
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.mat-card {
+  margin-bottom: 20px;
+}

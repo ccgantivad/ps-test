@@ -1,34 +1,32 @@
-import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { UserService } from './user.service';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-describe('UserService', () => {
-  let service: UserService;
-  let httpMock: HttpTestingController;
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {
+  private apiUrl = 'https://jsonplaceholder.typicode.com/users';
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [UserService]
-    });
-    service = TestBed.inject(UserService);
-    httpMock = TestBed.inject(HttpTestingController);
-  });
+  constructor(private http: HttpClient) { }
 
-  it('should retrieve users from the API via GET', () => {
-    const dummyUsers = [{ id: 1, name: 'John' }, { id: 2, name: 'Doe' }];
+  getUsers(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
+  }
 
-    service.getUsers().subscribe(users => {
-      expect(users.length).toBe(2);
-      expect(users).toEqual(dummyUsers);
-    });
+  getUser(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
 
-    const request = httpMock.expectOne(`${service.apiUrl}`);
-    expect(request.request.method).toBe('GET');
-    request.flush(dummyUsers);
-  });
+  createUser(user: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, user);
+  }
 
-  afterEach(() => {
-    httpMock.verify();
-  });
-});
+  updateUser(id: number, user: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, user);
+  }
+
+  deleteUser(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/${id}`);
+  }
+}

@@ -1,0 +1,31 @@
+.container {
+  padding: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.create-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.user-card {
+  width: calc(33% - 20px);
+  margin-bottom: 20px;
+}
+
+button {
+  margin-top: 10px;
+}

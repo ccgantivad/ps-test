@@ -2,19 +2,19 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ActivatedRoute } from '@angular/router';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { UserDetailComponent } from './user-detail.component';
-import { UserService } from '../../services/user.service';
+import { PostDetailComponent } from './post-detail.component';
+import { PostService } from '../../services/post.service';
 
-describe('UserDetailComponent', () => {
-  let component: UserDetailComponent;
-  let fixture: ComponentFixture<UserDetailComponent>;
+describe('PostDetailComponent', () => {
+  let component: PostDetailComponent;
+  let fixture: ComponentFixture<PostDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, MatSnackBarModule],
-      declarations: [UserDetailComponent],
+      declarations: [PostDetailComponent],
       providers: [
-        UserService,
+        PostService,
         {
           provide: ActivatedRoute,
           useValue: {
@@ -30,7 +30,7 @@ describe('UserDetailComponent', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserDetailComponent);
+    fixture = TestBed.createComponent(PostDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

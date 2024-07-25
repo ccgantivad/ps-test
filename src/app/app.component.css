@@ -1,0 +1,30 @@
+.mat-toolbar {
+  font-family: 'Roboto', sans-serif;
+}
+
+.mat-toolbar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-link {
+  font-size: 16px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}

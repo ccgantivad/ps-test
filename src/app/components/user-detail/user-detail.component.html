@@ -1,1 +1,68 @@
-<p>user-detail works!</p>
+<div *ngIf="user" class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Detalles de {{ user.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="updateUser()">
+        <h3>Información Básica</h3>
+        <mat-form-field class="full-width">
+          <mat-label>Nombre</mat-label>
+          <input matInput [(ngModel)]="user.name" name="name" required>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Nombre de Usuario</mat-label>
+          <input matInput [(ngModel)]="user.username" name="username" required>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput [(ngModel)]="user.email" name="email" required>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Teléfono</mat-label>
+          <input matInput [(ngModel)]="user.phone" name="phone" required>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Sitio Web</mat-label>
+          <input matInput [(ngModel)]="user.website" name="website">
+        </mat-form-field>
+
+        <h3>Dirección</h3>
+        <mat-form-field class="full-width">
+          <mat-label>Calle</mat-label>
+          <input matInput [(ngModel)]="user.address.street" name="street" required>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Suite</mat-label>
+          <input matInput [(ngModel)]="user.address.suite" name="suite" required>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Ciudad</mat-label>
+          <input matInput [(ngModel)]="user.address.city" name="city" required>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Código Postal</mat-label>
+          <input matInput [(ngModel)]="user.address.zipcode" name="zipcode" required>
+        </mat-form-field>
+
+        <h3>Compañía</h3>
+        <mat-form-field class="full-width">
+          <mat-label>Nombre</mat-label>
+          <input matInput [(ngModel)]="user.company.name" name="companyName" required>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Eslogan</mat-label>
+          <input matInput [(ngModel)]="user.company.catchPhrase" name="catchPhrase" required>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Negocio</mat-label>
+          <input matInput [(ngModel)]="user.company.bs" name="bs" required>
+        </mat-form-field>
+
+        <div class="button-tile">
+          <button mat-raised-button color="primary" type="submit">Guardar Cambios</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

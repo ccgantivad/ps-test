@@ -1,0 +1,31 @@
+<div class="container">
+  <h2 *ngIf="isUserSelected; else genericTitle">
+    Lista de Publicaciones de {{ userName }} ({{ userEmail }})
+  </h2>
+  <ng-template #genericTitle>
+    <h2>Lista de Publicaciones</h2>
+  </ng-template>
+  <div class="actions">
+    <button mat-fab color="primary" class="create-button" (click)="openDialog()" matTooltip="Agregar nueva publicación">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <div class="post-list">
+    <mat-card *ngFor="let post of posts" class="post-card">
+      <mat-card-header>
+        <mat-card-title>{{ post.title }}</mat-card-title>
+        <div class="action-buttons">
+          <button mat-icon-button color="primary" [routerLink]="['/posts', post.id]" matTooltip="Editar publicación">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" class="delete-button" (click)="deletePost(post.id)" matTooltip="Eliminar publicación">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ post.body }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

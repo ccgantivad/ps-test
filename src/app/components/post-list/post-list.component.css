@@ -1,15 +1,19 @@
 .container {
   padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 80px; /* Ajusta este valor según la altura de tu menú */
+  margin-bottom: 20px;
 }
 
 .actions {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 20px;
-}
-
-.search-bar {
-  width: 100%;
   margin-bottom: 20px;
 }
 
@@ -23,29 +27,17 @@
   color: #fdf8f8;
 }
 
-.user-list {
+.post-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-.user-card {
+.post-card {
   width: calc(33% - 20px);
   margin-bottom: 20px;
-  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-.user-avatar {
-  background-color: #e0e0e0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
 }
 
 mat-card-header {
@@ -61,12 +53,6 @@ mat-card-title {
 
 mat-card-content {
   padding-top: 0;
-}
-
-
-
-button {
-  margin-top: 10px;
 }
 
 .action-buttons {
