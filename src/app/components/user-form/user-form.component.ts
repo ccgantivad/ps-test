@@ -22,11 +22,18 @@ export class UserFormComponent {
   }
 
   createUser(): void {
-    this.userService.createUser(this.newUser).subscribe(user => {
-      this.dialogRef.close(user);
-      this.snackBar.open('Usuario creado con éxito', 'Cerrar', {
-        duration: 3000,
-      });
-    });
+    this.userService.createUser(this.newUser).subscribe(
+      user => {
+        this.dialogRef.close(user);
+        this.snackBar.open('Usuario creado con éxito', 'Cerrar', {
+          duration: 3000,
+        });
+      },
+      error => {
+        this.snackBar.open('No se pudo crear el usuario', 'Cerrar', {
+          duration: 3000,
+        });
+      }
+    );
   }
 }

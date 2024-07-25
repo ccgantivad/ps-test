@@ -17,13 +17,17 @@ export class PostListComponent implements OnInit {
   isUserSelected: boolean = false;
 
   constructor(
-    private postService: PostService,
-    private snackBar: MatSnackBar,
-    private route: ActivatedRoute,
+    protected postService: PostService,
+    protected snackBar: MatSnackBar,
+    protected route: ActivatedRoute,
     public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
+    this.loadPosts();
+  }
+
+  loadPosts(): void {
     const userId = this.route.snapshot.paramMap.get('userId');
     this.route.queryParams.subscribe(params => {
       this.userName = params['userName'] || '';
@@ -38,6 +42,10 @@ export class PostListComponent implements OnInit {
     } else {
       this.postService.getPosts().subscribe(data => {
         this.posts = data;
+      }, error => {
+        this.snackBar.open('No se pudo cargar los posts', 'Cerrar', {
+          duration: 3000,
+        });
       });
     }
   }
